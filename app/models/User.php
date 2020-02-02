@@ -14,5 +14,15 @@
 	    }
 	    return $data;
 		}
+		public function lists() {
+			$query = "SELECT * FROM user";
+			$data = [];
+			$result = mysqli_query($this->con, $query);
+			while($row = mysqli_fetch_assoc($result))
+	    {
+	        $data[] = $row;
+	    }
+	    return json_encode($data);
+		}
 	}
 ?>
