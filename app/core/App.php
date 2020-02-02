@@ -10,7 +10,7 @@
 			echo '</pre>';
 		}
 		public function parseUrl() {
-			return "parseUrl";
+			return $_GET['url'];
 		}
 	}
 ?>
