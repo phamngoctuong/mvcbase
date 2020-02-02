@@ -4,7 +4,13 @@
 		protected $method = 'index';
 		protected $params = [];
 		public function __construct() {
-			echo "App";
+			$url = $this->parseUrl();
+			echo '<pre>';
+				print_r($url);
+			echo '</pre>';
+		}
+		public function parseUrl() {
+			return "parseUrl";
 		}
 	}
 ?>
