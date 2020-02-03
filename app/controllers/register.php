@@ -3,16 +3,19 @@
 	{
 		public function index()
 		{
-			$this->view('register\register');
+			$data['page'] = 'register';
+			$this->view('layout/master1',$data);
 		}
 		public function userregis() {
 			$user = $this->model('User');
+			$data['page'] = 'register';
 			if(isset($_POST['submit'])) {
 				$username = $_POST['username'];
 				$password = $_POST['password'];
 				$password = password_hash($password, PASSWORD_DEFAULT);
 				$result = $user->insert($username,$password);
-				$this->view('register\register',['result'=>$result]);
+				$data['result'] = $result;
+				$this->view('layout/master1',$data);
 			}
 		}
 	}
